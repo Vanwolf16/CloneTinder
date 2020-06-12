@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol HomeNavigationStackViewDelegate:class{
+    func showSettings()
+    func showMessages()
+}
+
 class HomeNavigationStackView:UIStackView{
+    
+    weak var delegate:HomeNavigationStackViewDelegate?
+     
     //MARK: - Properties
     let settingBtn = UIButton(type: .system)
     let messageBtn = UIButton(type: .system)
@@ -36,6 +44,17 @@ class HomeNavigationStackView:UIStackView{
         isLayoutMarginsRelativeArrangement = true
         layoutMargins = .init(top: 0, left: 16, bottom: 0, right: 16)
         
+        settingBtn.addTarget(self, action: #selector(handleShowSettings), for: .touchUpInside)
+        messageBtn.addTarget(self, action: #selector(handleShowMessages), for: .touchUpInside)
+        
+    }
+    
+    @objc func handleShowSettings(){
+        delegate?.showSettings()
+    }
+    
+    @objc func handleShowMessages(){
+        delegate?.showMessages()
     }
     
     required init(coder: NSCoder) {

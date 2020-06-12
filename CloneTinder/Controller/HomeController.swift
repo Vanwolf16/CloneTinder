@@ -97,6 +97,8 @@ class HomeController:UIViewController{
     func configUI(){
         view.backgroundColor = .white
         
+        topStack.delegate = self
+        
         let stack = UIStackView(arrangedSubviews: [topStack,deckView,bottomStack])
         stack.axis = .vertical
         
@@ -115,6 +117,20 @@ class HomeController:UIViewController{
             nav.modalPresentationStyle = .fullScreen
             self.present(nav, animated: true, completion: nil)
         }
+    }
+    
+}
+
+extension HomeController:HomeNavigationStackViewDelegate{
+    func showSettings() {
+        let controller = SettingsController()
+        let nav = UINavigationController(rootViewController: controller)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true, completion: nil)
+    }
+    
+    func showMessages() {
+        print("Messages")
     }
     
 }

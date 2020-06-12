@@ -30,6 +30,8 @@
 		B449B08924919DB7007166B8 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B449B08724919DB7007166B8 /* CardViewModel.swift */; };
 		B4547CFF2491E30700E43160 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4547CFE2491E30700E43160 /* AuthService.swift */; };
 		B4547D012491E31C00E43160 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4547D002491E31C00E43160 /* Service.swift */; };
+		B48BCB602494472E00DD63E0 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BCB5F2494472E00DD63E0 /* SettingsController.swift */; };
+		B48BCB62249449CA00DD63E0 /* SettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BCB61249449CA00DD63E0 /* SettingsHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		B449B08724919DB7007166B8 /* CardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		B4547CFE2491E30700E43160 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B4547D002491E31C00E43160 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		B48BCB5F2494472E00DD63E0 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		B48BCB61249449CA00DD63E0 /* SettingsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 				B449B07A24919D89007166B8 /* BottomControlsStackView.swift */,
 				B449B07B24919D89007166B8 /* CardView.swift */,
 				B449B07924919D89007166B8 /* HomeNavigationStackView.swift */,
+				B48BCB61249449CA00DD63E0 /* SettingsHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 			children = (
 				B449B08124919D9C007166B8 /* Authentication */,
 				B449B07F24919D99007166B8 /* HomeController.swift */,
+				B48BCB5F2494472E00DD63E0 /* SettingsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -316,6 +322,7 @@
 				B449B08824919DB7007166B8 /* AuthenticationViewModel.swift in Sources */,
 				B449B07224919D73007166B8 /* User.swift in Sources */,
 				B449B08024919D99007166B8 /* HomeController.swift in Sources */,
+				B48BCB62249449CA00DD63E0 /* SettingsHeader.swift in Sources */,
 				B449B07824919D80007166B8 /* AuthButton.swift in Sources */,
 				B449B07C24919D89007166B8 /* HomeNavigationStackView.swift in Sources */,
 				B449B07E24919D89007166B8 /* CardView.swift in Sources */,
@@ -326,6 +333,7 @@
 				B449B05824919C18007166B8 /* SceneDelegate.swift in Sources */,
 				B449B07624919D80007166B8 /* CustomTextField.swift in Sources */,
 				B449B08524919DAA007166B8 /* RegistrationController.swift in Sources */,
+				B48BCB602494472E00DD63E0 /* SettingsController.swift in Sources */,
 				B449B08924919DB7007166B8 /* CardViewModel.swift in Sources */,
 				B4547CFF2491E30700E43160 /* AuthService.swift in Sources */,
 				B426E97D24931BCF009B9100 /* Constants.swift in Sources */,
