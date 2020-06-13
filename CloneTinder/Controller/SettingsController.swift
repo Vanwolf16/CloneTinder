@@ -11,6 +11,8 @@ import UIKit
 class SettingsController:UITableViewController{
     //MARK: Properties
     private let headerView = SettingsHeader()
+    private let imagePicker = UIImagePickerController()
+    private var indexImage = 0
     //MARK: LifeCycle
     
     override func viewDidLoad() {
@@ -29,7 +31,13 @@ class SettingsController:UITableViewController{
     
     //MARK: Helpers
     
+    func setHeaderImage(_ image:UIImage?){
+        headerView.buttons[indexImage].setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
+    }
+    
     func configureUI(){
+        headerView.delegate = self
+        imagePicker.delegate = self
         navigationItem.title = "Settings"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .black
@@ -45,5 +53,23 @@ class SettingsController:UITableViewController{
     }
     
     
+}
+
+extension SettingsController:SettingsHeaderDelegate{
+    func settingsHeader(_ header: SettingsHeader, didSelect index: Int) {
+        self.indexImage = index
+       present(imagePicker, animated: true, completion: nil)
+    }
     
+}
+
+extension SettingsController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let selectedImage = info[.originalImage] as? UIImage
+        
+        //update the photo
+        setHeaderImage(selectedImage)
+        
+        dismiss(animated: true, completion: nil)
+    }
 }

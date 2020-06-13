@@ -8,19 +8,33 @@
 
 import UIKit
 
+protocol SettingsHeaderDelegate:class{
+    func settingsHeader(_ header:SettingsHeader,didSelect index:Int)
+}
+
 class SettingsHeader:UIView{
+    //MARK: Protocol
+    weak var delegate:SettingsHeaderDelegate?
+    
     //MARK: Properties
+    
     var buttons = [UIButton]()
     
-   
+  
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .systemGroupedBackground
         
-        let button1 = createButton()
-        let button2 = createButton()
-        let button3 = createButton()
+        let button1 = createButton(0)
+          let button2 = createButton(1)
+          let button3 = createButton(2)
+        
+        buttons.append(button1)
+        buttons.append(button2)
+        buttons.append(button3)
         
         addSubview(button1)
         
@@ -47,17 +61,18 @@ class SettingsHeader:UIView{
     }
     
     //MARK: Actions
-    @objc func handleSelectPhoto(){
-        print("Show photo selector")
+    @objc func handleSelectPhoto(sender:UIButton){
+        delegate?.settingsHeader(self, didSelect: sender.tag)
     }
     
-    func createButton() -> UIButton{
+    func createButton(_ index:Int) -> UIButton{
         let button = UIButton(type: .system)
         button.setTitle("Select Photo", for: .normal)
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
         button.backgroundColor = .white
         button.imageView?.contentMode = .scaleAspectFill
+        button.tag = index
         return button
     }
     
